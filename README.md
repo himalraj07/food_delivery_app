@@ -95,3 +95,9 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+npm i @react-native-community/blur @react-navigation/bottom-tabs @react-navigation/native @react-navigation/native-stack @reduxjs/toolkit axios lottie-react-native react-native-animated-numbers react-native-gesture-handler react-native-get-random-values react-native-linear-gradient react-native-mmkv react-native-reanimated react-native-responsive-fontsize react-native-rolling-bar react-native-safe-area-context react-native-screens react-native-svg react-native-svg-transformer react-native-unistyles react-native-vector-icons react-redux redux-persist uuid
+
+"pod-install": "cd ios && RCT_NEW_ARCH_ENABLED=1 bundle exec pod install",
+"postinstall": "npx patch-package",
+"generate-apk": "cd android && ./gradlew assembleRelease"
