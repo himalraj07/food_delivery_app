@@ -101,3 +101,8 @@ npm i @react-native-community/blur @react-navigation/bottom-tabs @react-navigati
 "pod-install": "cd ios && RCT_NEW_ARCH_ENABLED=1 bundle exec pod install",
 "postinstall": "npx patch-package",
 "generate-apk": "cd android && ./gradlew assembleRelease"
+
+project.ext.vectoriocns=[
+        iconFontNames: ['MaterialCommunityIcons.ttf', 'MaterialIcons.ttf', 'Ionicons.ttf']
+    ]
+    apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
