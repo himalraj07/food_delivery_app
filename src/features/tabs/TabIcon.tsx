@@ -1,11 +1,11 @@
-import DeliveryFocused from '@assets/tabicons/delivery_focused.png';
 import Delivery from '@assets/tabicons/delivery.png';
-import DiningFocused from '@assets/tabicons/dining_focused.png';
+import DeliveryFocused from '@assets/tabicons/delivery_focused.png';
 import Dining from '@assets/tabicons/dining.png';
-import LiveFocused from '@assets/tabicons/live_focused.png';
+import DiningFocused from '@assets/tabicons/dining_focused.png';
 import Live from '@assets/tabicons/live.png';
-import ReorderFocused from '@assets/tabicons/reorder_focused.png';
+import LiveFocused from '@assets/tabicons/live_focused.png';
 import Reorder from '@assets/tabicons/reorder.png';
+import ReorderFocused from '@assets/tabicons/reorder_focused.png';
 import CustomText from '@components/global/CustomText';
 import {Colors} from '@unistyles/Constants';
 import {FC, memo} from 'react';

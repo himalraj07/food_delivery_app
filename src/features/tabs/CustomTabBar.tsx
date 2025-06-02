@@ -1,13 +1,13 @@
-import {View, Text} from 'react-native';
-import React, {FC} from 'react';
+import ScalePress from '@components/ui/ScalePress';
 import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
-import {useSharedState} from './SharedContext';
+import {Colors, screenWidth} from '@unistyles/Constants';
+import {tabStyles} from '@unistyles/tabStyles';
+import React, {FC} from 'react';
+import {Alert, Image, TouchableOpacity, View} from 'react-native';
+import Animated, {useAnimatedStyle, withTiming} from 'react-native-reanimated';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {useStyles} from 'react-native-unistyles';
-import {tabStyles} from '@unistyles/tabStyles';
-import Animated, {useAnimatedStyle, withTiming} from 'react-native-reanimated';
-import {Colors, screenWidth} from '@unistyles/Constants';
-import ScalePress from '@components/ui/ScalePress';
+import {useSharedState} from './SharedContext';
 import {
   DeliveryTabIcon,
   DiningTabIcon,
@@ -16,6 +16,7 @@ import {
 } from './TabIcon';
 
 const CustomTabBar: FC<BottomTabBarProps> = props => {
+  const isVegMode = true;
   const {scrollY} = useSharedState();
 
   const {state, navigation} = props;
@@ -101,7 +102,33 @@ const CustomTabBar: FC<BottomTabBarProps> = props => {
               </ScalePress>
             );
           })}
+          <View style={styles.verticalLine}></View>
         </View>
+        <Animated.View
+          style={[
+            styles.slidingIndicator,
+            indicatorStyle,
+            {
+              backgroundColor: isLiveTabFocused
+                ? '#fff'
+                : isVegMode
+                ? Colors.active
+                : Colors.primary,
+            },
+          ]}
+        />
+
+        <TouchableOpacity
+          activeOpacity={0.9}
+          style={styles.groceryLogoContainer}
+          onPress={() => {
+            Alert.alert('Grocery', 'Grocery tab is not implemented yet.');
+          }}>
+          <Image
+            source={require('@assets/icons/grocery.png')}
+            style={styles.groceryLogo}
+          />
+        </TouchableOpacity>
       </Animated.View>
     </>
   );
