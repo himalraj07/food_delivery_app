@@ -1,4 +1,5 @@
 import Graphics from '@components/home/Graphics';
+import HeaderSection from '@components/home/HeaderSection';
 import {useSharedState} from '@features/tabs/SharedContext';
 import {homeStyles} from '@unistyles/homeStyles';
 import React, {FC} from 'react';
@@ -53,6 +54,7 @@ const DeliveryScreen: FC = () => {
 
         <Animated.View
           style={[backgroundColorChanges, styles.topHeader]}></Animated.View>
+          <HeaderSection />
       </Animated.View>
 
       <Animated.View style={moveUpStyle}></Animated.View>

@@ -1,7 +1,8 @@
 import {homeStyles} from '@unistyles/homeStyles';
 import LottieView from 'lottie-react-native';
 import React from 'react';
-import {Platform, View} from 'react-native';
+
+import {Platform, StatusBar, View} from 'react-native';
 import {useStyles} from 'react-native-unistyles';
 
 const Graphics = () => {
@@ -9,13 +10,14 @@ const Graphics = () => {
 
   return (
     <View style={styles.lottieContainer} pointerEvents="none">
+      <StatusBar hidden={Platform.OS === 'android'} />
       <LottieView
         enableMergePathsAndroidForKitKatAndAbove
         enableSafeModeAndroid
         style={styles.lottie}
         source={require('@assets/animations/event.json')}
         autoPlay
-        loop={Platform.OS === 'android'}
+        loop
         hardwareAccelerationAndroid
       />
     </View>

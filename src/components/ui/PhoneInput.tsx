@@ -26,7 +26,7 @@ const PhoneInput: FC<PhoneInputProps> = ({
       <Pressable style={styles.countryPickerContainer}>
         <CustomText variant="h4">🇳🇵</CustomText>
         <Ionicons
-          iconFamily="Ionicons"
+          // iconFamily="Ionicons"
           name="caret-down-sharp"
           color={Colors.lightText}
           size={18}
