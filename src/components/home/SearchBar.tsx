@@ -1,20 +1,22 @@
 import {
   View,
   Text,
-  TouchableOpacity,
   SafeAreaView,
+  TouchableOpacity,
   Pressable,
+  Image,
 } from 'react-native';
 import React from 'react';
 import {useStyles} from 'react-native-unistyles';
 import {homeStyles} from '@unistyles/homeStyles';
 import {useSharedState} from '@features/tabs/SharedContext';
 import Animated, {interpolate, useAnimatedStyle} from 'react-native-reanimated';
-import Icon from '@components/global/Icon';
 import {Colors} from '@unistyles/Constants';
+import Icon from '@components/global/Icon';
 import CustomText from '@components/global/CustomText';
 import RollingContent from 'react-native-rolling-bar';
-import {Image} from 'react-native';
+import {useAppDispatch, useAppSelector} from '@states/reduxHook';
+import {setVegMode} from '@states/reducers/userSlice';
 
 const searchItems: string[] = [
   'Search "chai samosa"',
@@ -25,7 +27,8 @@ const searchItems: string[] = [
 ];
 
 const SearchBar = () => {
-  const isVegMode = true;
+  const dispatch = useAppDispatch();
+  const isVegMode = useAppSelector(state => state.user.isVegMode);
 
   const {styles} = useStyles(homeStyles);
   const {scrollYGlobal} = useSharedState();
@@ -40,6 +43,7 @@ const SearchBar = () => {
   return (
     <>
       <SafeAreaView />
+
       <View style={[styles.flexRowBetween, styles.padding]}>
         <TouchableOpacity
           style={styles.searchInputContainer}
@@ -71,13 +75,14 @@ const SearchBar = () => {
           <Icon
             iconFamily="Ionicons"
             name="mic-outline"
-            color="{isVegMode ? Colors.active : Colors.primary}"
+            color={isVegMode ? Colors.active : Colors.primary}
             size={20}
           />
         </TouchableOpacity>
 
-        <Pressable style={styles.vegMode}
-          onPress={() => { }}>
+        <Pressable
+          style={styles.vegMode}
+          onPress={() => dispatch(setVegMode(!isVegMode))}>
           <Animated.Text style={[textColorAnimation, styles.animatedText]}>
             VEG
           </Animated.Text>

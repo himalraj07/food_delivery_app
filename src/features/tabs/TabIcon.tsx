@@ -7,6 +7,7 @@ import LiveFocused from '@assets/tabicons/live_focused.png';
 import Reorder from '@assets/tabicons/reorder.png';
 import ReorderFocused from '@assets/tabicons/reorder_focused.png';
 import CustomText from '@components/global/CustomText';
+import {useAppSelector} from '@states/reduxHook';
 import {Colors} from '@unistyles/Constants';
 import {FC, memo} from 'react';
 import {Image, TextStyle, View, ViewStyle} from 'react-native';
@@ -64,8 +65,10 @@ const TabIcon: FC<TabProps> = memo(({name}) => {
   );
 });
 
-const TabIconFocused: FC<TabProps> = memo(({name}) => {
-  const isVegMode = true;
+const TabIconFocused: FC<TabProps> = memo(({ name }) => {
+  
+  const isVegMode = useAppSelector(state => state.user.isVegMode);
+  
   return (
     <View style={tabStyles}>
       <Image
