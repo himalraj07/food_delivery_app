@@ -44,7 +44,7 @@ const ExploreList = () => {
       </View>
 
       <RecommendedList />
-      <BreakerText text="'WHAT'S ON YOUR MIND" />
+      <BreakerText text="WHAT'S ON YOUR MIND" />
       <RegularFoodList />
       <BreakerText text="ALL RESTAURANTS" />
     </View>
