@@ -9,7 +9,8 @@ import CustomText from '@components/global/CustomText';
 const SortingAndFilters: FC<{
   menuTitle: string;
   options: Record<string, any>;
-}> = ({menuTitle, options}) => {
+}> = ({ menuTitle, options }) => {
+  
   const {styles} = useStyles(filterStyles);
 
   return (
