@@ -1,5 +1,5 @@
 import {View, Text, TouchableOpacity} from 'react-native';
-import React, {FC, memo, useRef} from 'react';
+import React, {FC, memo, useCallback, useRef} from 'react';
 import {useStyles} from 'react-native-unistyles';
 import {foodStyles} from '@unistyles/foodStyles';
 import CustomText from '@components/global/CustomText';
@@ -8,19 +8,47 @@ import AnimatedNumbers from 'react-native-animated-numbers';
 import ScalePress from '@components/ui/ScalePress';
 import Icon from '@components/global/Icon';
 import {RFValue} from 'react-native-responsive-fontsize';
-import {useAppDispatch} from '@states/reduxHook';
+import {useAppDispatch, useAppSelector} from '@states/reduxHook';
+import {
+  addItemToCart,
+  selectRestaurantCartItem,
+  removeItemFromCart,
+} from '@states/reducers/cartSlice';
+import CustomModal from '@components/modal/CustomModal';
 
 const AddButton: FC<{item: any; restaurant: any}> = ({item, restaurant}) => {
   const dispatch = useAppDispatch();
   const {styles} = useStyles(foodStyles);
-  const cart = null;
+  const cart = useAppSelector(
+    selectRestaurantCartItem(restaurant?.id, item?.id),
+  );
+
   const modalRef = useRef<any>(null);
 
-  const addCartHandler = () => {};
-  const removeCartHandler = () => {};
+  const addCartHandler = useCallback(() => {
+    if (item?.isCustomizable) {
+    } else {
+      dispatch(
+        addItemToCart({
+          restaurant: restaurant,
+          item: {...item, customisation: []},
+        }),
+      );
+    }
+  }, [dispatch, item, restaurant, cart]);
+
+  const removeCartHandler = useCallback(() => {
+    if (item?.isCustomizable) {
+    } else {
+      dispatch(
+        removeItemFromCart({restaurant_id: restaurant?.id, itemId: item?.id}),
+      );
+    }
+  }, [dispatch, item, restaurant, cart]);
 
   return (
     <>
+      <CustomModal ref={modalRef} />
       <View style={styles.addButtonContainer(cart !== null)}>
         {cart ? (
           <View style={styles.selectedContainer}>
