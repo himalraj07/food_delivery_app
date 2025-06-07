@@ -103,6 +103,8 @@ npm i @react-native-community/blur @react-navigation/bottom-tabs @react-navigati
 "generate-apk": "cd android && ./gradlew assembleRelease"
 
 project.ext.vectoriocns=[
-        iconFontNames: ['MaterialCommunityIcons.ttf', 'MaterialIcons.ttf', 'Ionicons.ttf']
-    ]
-    apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+iconFontNames: ['MaterialCommunityIcons.ttf', 'MaterialIcons.ttf', 'Ionicons.ttf']
+]
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
+₹

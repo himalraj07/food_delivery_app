@@ -109,6 +109,42 @@ export const cartSlice = createSlice({
       }
     },
 
+    addCustomizableItem: (
+      state,
+      action: PayloadAction<{
+        restaurant: RestaurantDetails;
+        item: CartItem;
+        customization: {
+          quantity: number;
+          price: number;
+          customizationOptions: any[];
+        };
+      }>,
+    ) => {},
+
+    removeCustomizableItem: (
+      state,
+      action: PayloadAction<{
+        restaurant_id: string;
+        itemId: string;
+        customizationId: string;
+      }>,
+    ) => {},
+
+    updateCustomizableItem: (
+      state,
+      action: PayloadAction<{
+        restaurant_id: string;
+        itemId: string;
+        customizationId: string;
+        newCustomization: {
+          quantity: number;
+          price: number;
+          customizationOptions: any[];
+        };
+      }>,
+    ) => {},
+
     clearAllCarts: state => {
       state.carts = [];
     },
@@ -129,6 +165,9 @@ export const {
   removeItemFromCart,
   clearAllCarts,
   clearRestaurantCart,
+  addCustomizableItem,
+  removeCustomizableItem,
+  updateCustomizableItem,
 } = cartSlice.actions;
 
 export const selectCart = (state: RootState) => state.cart;

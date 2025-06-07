@@ -31,7 +31,7 @@ const CustomModal = forwardRef((props, ref) => {
       visible={visible}
       animationType="slide"
       onRequestClose={() => setVisible(false)}>
-      {Platform.OS === 'ios' && (
+      {Platform.OS === 'android' && (
         <BlurView style={styles.absolute} blurType="light" blurAmount={10} />
       )}
       <View style={styles.modalContainer}>
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   modalContainer: {
     flex: 1,
     backgroundColor: 'rgba(0,0,0,0.5)',
-    filter: Platform.OS === 'android' ? [{blur: 4}] : undefined,
+    // filter: Platform.OS === 'android' ? [{blur: 4}] : undefined,
     justifyContent: 'flex-end',
   },
   contentContainer: {
