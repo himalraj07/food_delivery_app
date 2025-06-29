@@ -15,6 +15,7 @@ import {
   ReorderTabIcon,
 } from './TabIcon';
 import {useAppSelector} from '@states/reduxHook';
+import CartHOC from '@features/checkout/CartHOC';
 
 const CustomTabBar: FC<BottomTabBarProps> = props => {
   const isVegMode = useAppSelector(state => state.user.isVegMode);
@@ -49,6 +50,7 @@ const CustomTabBar: FC<BottomTabBarProps> = props => {
 
   return (
     <>
+      {!isLiveTabFocused && <CartHOC />}
       <Animated.View
         style={[
           styles.tabBarContainer,

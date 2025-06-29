@@ -6,10 +6,14 @@ import {useStyles} from 'react-native-unistyles';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import CustomSafeAreaView from '@components/global/CustomSafeAreaView';
 import SortingAndFilters from '@components/home/SortingAndFilters';
-import {restaurantItemsData,restaurantsItemfiltersOption,} from '@utils/dummyData';
+import {
+  restaurantItemsData,
+  restaurantsItemfiltersOption,
+} from '@utils/dummyData';
 import RestaurantHeader from '@components/restaurant/RestaurantHeader';
 import DottedLine from '@components/ui/DottedLine';
 import FoodCard from '@components/restaurant/FoodCard';
+import SearchAndOffers from '@components/restaurant/SearchAndOffers';
 
 const RestaurantScreen: FC = () => {
   const route = useRoute() as any;
@@ -46,6 +50,8 @@ const RestaurantScreen: FC = () => {
           )}
           contentContainerStyle={styles.scrollContainer}
         />
+
+        <SearchAndOffers item={restaurant} />
       </CustomSafeAreaView>
     </>
   );
