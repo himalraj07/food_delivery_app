@@ -1,11 +1,13 @@
 import LoginScreen from '@features/auth/LoginScreen';
 import SplashScreen from '@features/auth/SplashScreen';
+import CheckoutScreen from '@features/checkout/CheckoutScreen';
+import OrderSuccessScreen from '@features/checkout/OrderSuccessScreen';
 import RestaurantScreen from '@features/restaurants/RestaurantScreen';
 import AnimatedTabs from '@features/tabs/AnimatedTabs';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { navigationRef } from '@utils/NavigationUtils';
-import React, { FC } from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {navigationRef} from '@utils/NavigationUtils';
+import React, {FC} from 'react';
 
 const Stack = createNativeStackNavigator();
 
@@ -30,6 +32,12 @@ const Navigation: FC = () => {
           }}
           name="UserBottomTab"
           component={AnimatedTabs}
+        />
+
+        <Stack.Screen name="CheckoutScreen" component={CheckoutScreen} />
+        <Stack.Screen
+          name="OrderSuccessScreen"
+          component={OrderSuccessScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
