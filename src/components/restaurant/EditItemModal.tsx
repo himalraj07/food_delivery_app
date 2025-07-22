@@ -214,7 +214,7 @@ const EditItemModal: FC<{
                       </CustomText>
                       <View style={styles.flexRowGap}>
                         <CustomText fontSize={11} fontFamily="Okra-Medium">
-                          ₹{option?.price}
+                          रु{option?.price}
                         </CustomText>
                         <Icon
                           name={
@@ -269,7 +269,7 @@ const EditItemModal: FC<{
           style={styles.addButtonContainer}
           onPress={updateItemIntoCart}>
           <CustomText color="#fff" fontFamily="Okra-Medium" variant="h5">
-            Update item - ₹{data?.price}
+            Update item - रु{data?.price}
           </CustomText>
         </TouchableOpacity>
         <SafeAreaView />

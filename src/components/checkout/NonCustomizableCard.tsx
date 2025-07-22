@@ -45,7 +45,7 @@ const NonCustomizableCard: FC<{
         />
         <View>
           <CustomText fontFamily="Okra-Bold">{item?.name}</CustomText>
-          <CustomText fontFamily="Okra-Medium">₹{item?.price}</CustomText>
+          <CustomText fontFamily="Okra-Medium">रु{item?.price}</CustomText>
         </View>
       </View>
 
@@ -74,7 +74,7 @@ const NonCustomizableCard: FC<{
             />
           </TouchableOpacity>
         </View>
-        <CustomText fontFamily="Okra-Medium">₹{item?.cartPrice}</CustomText>
+        <CustomText fontFamily="Okra-Medium">रु{item?.cartPrice}</CustomText>
       </View>
     </View>
   );

@@ -80,7 +80,7 @@ const MiniFoodCard: FC<{
 
           <View>
             <CustomText fontFamily="Okra-Bold">{cartItem?.name}</CustomText>
-            <CustomText fontFamily="Okra-Medium">₹{cus?.price}</CustomText>
+            <CustomText fontFamily="Okra-Medium">रु{cus?.price}</CustomText>
             <CustomText style={styles.selectedOptions}>
               {cus?.customizationOptions?.map((i: any, idx: number) => {
                 return (
@@ -132,7 +132,7 @@ const MiniFoodCard: FC<{
               />
             </TouchableOpacity>
           </View>
-          <CustomText fontFamily="Okra-Medium">₹{cus?.cartPrice}</CustomText>
+          <CustomText fontFamily="Okra-Medium">रु{cus?.cartPrice}</CustomText>
         </View>
       </View>
     </>

@@ -28,7 +28,7 @@ const CheckoutHeader: FC<{
               fontFamily="Okra-Medium"
               fontSize={10}
               style={styles.text2}>
-              Delivering to Pochinki, Erangel
+              Delivering to Bharatpur, Nepal
             </CustomText>
           </View>
         </View>

@@ -52,7 +52,7 @@ const OrderSuccessScreen: FC = () => {
         fontSize={12}
         style={styles.addressText}
         fontFamily="Okra-Regular">
-        Pochinki, Erangel ({restaurant?.name})
+        Bharatpur, Nepal ({restaurant?.name})
       </CustomText>
     </View>
   );

@@ -33,7 +33,7 @@ const LocationHeader: FC = () => {
           <View>
             <TouchableOpacity style={styles.flexRow}>
               <CustomText variant="h5" color={textColor} fontFamily="Okra-Bold">
-                Erangel, Pochinki
+                Bhatatpur, Nepal
               </CustomText>
               <Icon
                 name="chevron-down"
@@ -43,7 +43,7 @@ const LocationHeader: FC = () => {
               />
             </TouchableOpacity>
             <CustomText color={textColor} fontFamily="Okra-Medium">
-              Lucknow, Utter Pradesh
+              AasthaChowk, Bagmati Pradesh
             </CustomText>
           </View>
         </View>

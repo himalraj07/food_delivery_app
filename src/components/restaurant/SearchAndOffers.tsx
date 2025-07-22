@@ -200,7 +200,7 @@ const SearchAndOffers: FC<{item: any}> = ({item}) => {
                 ]}>
                 {summary?.totalPrice > 500
                   ? 'Congratulations! You get an extra 15% OFF!'
-                  : `Add items worth ₹${Math.max(
+                  : `Add items worth रु${Math.max(
                       1,
                       500 - summary?.totalPrice,
                     )} more to get extra 15% OFF`}

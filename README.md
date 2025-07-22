@@ -108,3 +108,4 @@ iconFontNames: ['MaterialCommunityIcons.ttf', 'MaterialIcons.ttf', 'Ionicons.ttf
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 
 ₹
+रु

@@ -29,36 +29,36 @@ const ReportItem: FC<{
           {title}
         </CustomText>
       </View>
-      <CustomText variant="h6">₹{ price}</CustomText>
+      <CustomText variant="h6">रु{price}</CustomText>
     </View>
   );
 };
 
-const BillDetails: FC<{ totalItemPrice: number }> = ({totalItemPrice}) => {
+const BillDetails: FC<{totalItemPrice: number}> = ({totalItemPrice}) => {
   return (
     <View style={styles.container}>
-      <CustomText style={styles.text} fontFamily='Okra-Bold'>
+      <CustomText style={styles.text} fontFamily="Okra-Bold">
         Bill Details
       </CustomText>
 
       <View style={styles.billContainer}>
         <ReportItem
-        iconName='article'
-        title='Items total'
-        price={totalItemPrice}
+          iconName="article"
+          title="Items total"
+          price={totalItemPrice}
         />
-        <ReportItem iconName='pedal-bike' title='Delivery charge' price={29}/>
-        <ReportItem iconName='shopping-bag' title='Handling charge' price={2}/>
-        <ReportItem iconName='cloudy-snowing' title='Surge charge' price={3}/>
+        <ReportItem iconName="pedal-bike" title="Delivery charge" price={29} />
+        <ReportItem iconName="shopping-bag" title="Handling charge" price={2} />
+        <ReportItem iconName="cloudy-snowing" title="Surge charge" price={3} />
       </View>
 
       <View style={[{marginBottom: 15}, styles.flexRowBetween]}>
-      <CustomText variant='h7' style={styles.text} fontFamily='Okra-Bold'>
-        Grand total
-      </CustomText>
-      <CustomText style={styles.text} fontFamily='Okra-Bold'>
-      ₹{totalItemPrice + 34}
-      </CustomText>
+        <CustomText variant="h7" style={styles.text} fontFamily="Okra-Bold">
+          Grand total
+        </CustomText>
+        <CustomText style={styles.text} fontFamily="Okra-Bold">
+          रु{totalItemPrice + 34}
+        </CustomText>
       </View>
     </View>
   );

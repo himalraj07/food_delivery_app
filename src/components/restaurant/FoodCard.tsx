@@ -32,7 +32,7 @@ const FoodCard: FC<{item: any; restaurant: any}> = ({item, restaurant}) => {
           {item?.description}
         </CustomText>
         <CustomText fontSize={11} numberOfLines={1} fontFamily="Okra-Medium">
-          ₹{item?.price}
+          रु{item?.price}
         </CustomText>
 
         <TouchableOpacity style={styles.addToCollectionContainer}>

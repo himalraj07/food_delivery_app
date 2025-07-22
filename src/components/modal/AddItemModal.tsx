@@ -206,7 +206,7 @@ const AddItemModal: FC<{item: any; restaurant: any; onClose: () => void}> = ({
                       </CustomText>
                       <View style={styles.flexRowGap}>
                         <CustomText fontSize={11} fontFamily="Okra-Medium">
-                          ₹{option?.price}
+                          रु{option?.price}
                         </CustomText>
                         <Icon
                           name={
@@ -261,7 +261,7 @@ const AddItemModal: FC<{item: any; restaurant: any; onClose: () => void}> = ({
           style={styles.addButtonContainer}
           onPress={addItemIntoCart}>
           <CustomText color="#fff" fontFamily="Okra-Medium" variant="h5">
-            Add item - ₹{data?.price}
+            Add item - रु{data?.price}
           </CustomText>
         </TouchableOpacity>
         <SafeAreaView />

@@ -33,7 +33,7 @@ const RestaurantCard: FC<{item: any}> = ({item}) => {
                 {item?.name}
               </CustomText>
               <CustomText>
-                {item.time} . {item?.distance} . ₹180 for one
+                {item.time} . {item?.distance} . रु180 for one
               </CustomText>
             </View>
 
